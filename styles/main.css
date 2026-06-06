@@ -19,24 +19,30 @@
   --color-kyobo: #27ae60;
 
   /* 카드 크기 */
-  --card-width: 148px;
-  --cover-width: 96px;
-  --cover-height: 136px;
+  --card-width: 172px;
+  --cover-width: 116px;
+  --cover-height: 164px;
 
   /* 형태 */
   --radius-card: 14px;
+
+  /* 레이아웃 — 배경은 전체 폭, 내용은 컬럼 정렬선에 통일 */
+  --content-max: 1400px;
+  --content-pad: 32px;
+  --gutter: max(var(--content-pad), calc((100% - var(--content-max)) / 2 + var(--content-pad)));
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+body { font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
        background: var(--color-bg); color: var(--color-text); }
 
-header { background: var(--color-brand); color: white; padding: 28px 32px; }
+header { background: var(--color-brand); color: white; padding: 28px var(--gutter); }
 header h1 { font-size: 24px; font-weight: 800; }
 header p { font-size: 13px; opacity: .8; margin-top: 4px; }
 
 /* 시리즈 탭 */
 .series-tabs { background: var(--color-tab-bg); display: flex;
+                padding: 0 var(--gutter);
                 border-bottom: 2px solid var(--color-brand); position: sticky; top: 0; z-index: 20; }
 .series-btn { padding: 14px 32px; border: none; background: transparent;
                color: rgba(255,255,255,.55); font-size: 14px; font-weight: 700;
@@ -46,7 +52,7 @@ header p { font-size: 13px; opacity: .8; margin-top: 4px; }
 .series-btn.active::after { content: ''; position: absolute; bottom: -2px; left: 0;
                              right: 0; height: 2px; background: var(--color-brand); }
 
-.filters { background: var(--color-surface); padding: 14px 32px; display: flex; gap: 8px;
+.filters { background: var(--color-surface); padding: 14px var(--gutter); display: flex; gap: 8px;
             flex-wrap: wrap; border-bottom: 1px solid var(--color-border-light);
             position: sticky; top: 50px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
 .filter-btn { padding: 6px 16px; border-radius: 20px; border: 1.5px solid var(--color-border);
@@ -54,14 +60,14 @@ header p { font-size: 13px; opacity: .8; margin-top: 4px; }
 .filter-btn:hover { border-color: var(--color-brand); color: var(--color-brand); }
 .filter-btn.active { background: var(--color-brand); color: white; border-color: var(--color-brand); }
 
-.content { padding: 28px 32px; max-width: 1400px; margin: 0 auto; }
-.search-wrap { margin-bottom: 20px; }
+.content { padding: 28px var(--gutter); }
+.search-wrap { margin-bottom: 28px; }
 .search-wrap input { width: 100%; max-width: 400px; padding: 10px 16px;
                        border: 1.5px solid var(--color-border); border-radius: 24px; font-size: 14px; }
 .search-wrap input:focus { outline: none; border-color: var(--color-brand); }
 
 /* 카테고리 섹션 (Do it!, 된다! 공통) */
-.section { margin-bottom: 44px; }
+.section { margin-bottom: 100px; }
 .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px;
                   padding-bottom: 12px; border-bottom: 2px solid var(--color-border-light); }
 .section-header h2 { font-size: 18px; font-weight: 700; }
@@ -78,7 +84,7 @@ header p { font-size: 13px; opacity: .8; margin-top: 4px; }
 .card:hover .card-title { color: var(--color-text); }
 .card img { width: var(--cover-width); height: var(--cover-height); object-fit: cover; border-radius: 7px;
             box-shadow: 0 4px 16px rgba(0,0,0,.22); margin-bottom: 10px; flex-shrink: 0; }
-.card-title { font-size: 11px; line-height: 1.5; color: var(--color-text-muted); word-break: keep-all; min-height: 66px; }
+.card-title { font-size: 14px; line-height: 1.5; color: var(--color-text); word-break: keep-all; min-height: 66px; }
 
 .no-result { text-align: center; color: #aaa; padding: 60px 0; font-size: 15px; display: none; }
 
