@@ -56,7 +56,8 @@ header p { font-size: 13px; opacity: .8; margin-top: 4px; }
             flex-wrap: wrap; border-bottom: 1px solid var(--color-border-light);
             position: sticky; top: 50px; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
 .filter-btn { padding: 6px 16px; border-radius: 20px; border: 1.5px solid var(--color-border);
-               background: var(--color-surface); font-size: 13px; font-weight: 600; cursor: pointer; transition: all .15s; }
+               background: var(--color-surface); font-size: 13px; font-weight: 600; cursor: pointer;
+               transition: background-color .15s, color .15s, border-color .15s; }
 .filter-btn:hover { border-color: var(--color-brand); color: var(--color-brand); }
 .filter-btn.active { background: var(--color-brand); color: white; border-color: var(--color-brand); }
 
@@ -107,3 +108,33 @@ header p { font-size: 13px; opacity: .8; margin-top: 4px; }
 .modal-close { width: 100%; padding: 10px; border: none; background: var(--color-bg);
                 border-radius: 8px; font-size: 13px; cursor: pointer; margin-top: 4px; }
 .modal-close:hover { background: var(--color-border-light); }
+
+/* ===== 반응형 ===== */
+@media (max-width: 768px) {
+  /* 좌우 여백 축소 (--gutter가 따라감) */
+  :root { --content-pad: 24px; }
+  header h1 { font-size: 20px; }
+  /* 시리즈 탭: 좁은 화면에서 가로 스크롤 (스크롤바 숨김) */
+  .series-tabs { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+  .series-tabs::-webkit-scrollbar { display: none; }
+  .series-btn { padding: 14px 20px; white-space: nowrap; }
+  /* 세로 클리핑 시 밑줄이 잘리지 않도록 박스 안쪽으로 */
+  .series-btn.active::after { bottom: 0; }
+  /* 필터: 여러 줄 대신 한 줄 가로 스크롤 칩 (터치 스와이프) */
+  .filters { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+             scrollbar-width: none; }
+  .filters::-webkit-scrollbar { display: none; }
+  .filter-btn { flex-shrink: 0; }
+}
+
+@media (max-width: 480px) {
+  /* 여백·카드 축소 → 카드 2열 */
+  :root {
+    --content-pad: 16px;
+    --card-width: 150px;
+    --cover-width: 104px;
+    --cover-height: 148px;
+  }
+  header { padding-top: 20px; padding-bottom: 20px; }
+  .card-grid { gap: 12px; }
+}

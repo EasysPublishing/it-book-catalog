@@ -17,6 +17,9 @@
   const $noResult = document.getElementById('no-result');
   const $overlay = document.getElementById('modal-overlay');
 
+  // 검색 정규화: 소문자 + 공백 제거 ("유니티 6" === "유니티6")
+  const normalize = s => s.toLowerCase().replace(/\s+/g, '');
+
   // ===== 카드 생성 =====
   function createCard(bookId) {
     const book = books[bookId];
@@ -24,7 +27,7 @@
     const card = document.createElement('div');
     card.className = 'card';
     card.dataset.bookId = bookId;
-    card.dataset.title = book.title.toLowerCase();
+    card.dataset.title = normalize(book.title);
 
     const img = document.createElement('img');
     img.src = book.cover;
@@ -132,7 +135,7 @@
 
   // ===== 검색 + 필터 적용 =====
   function applySearchAndFilter() {
-    const q = state.query.toLowerCase();
+    const q = normalize(state.query);
     const activeFilter = state.series === 'standalone' ? 'all' : state.filters[state.series];
     let anyVisible = false;
 
@@ -188,6 +191,32 @@
     state.query = e.target.value;
     applySearchAndFilter();
   });
+
+  // ===== 마우스 드래그 가로 스크롤 (PC) =====
+  // 터치는 네이티브 스크롤을 쓰므로 마우스일 때만 동작시킴
+  function enableDragScroll(el) {
+    let isDown = false, moved = false, startX = 0, startScroll = 0;
+    el.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'mouse') return;
+      isDown = true; moved = false;
+      startX = e.pageX; startScroll = el.scrollLeft;
+    });
+    el.addEventListener('pointermove', e => {
+      if (!isDown) return;
+      const dx = e.pageX - startX;
+      if (Math.abs(dx) > 3) moved = true;
+      el.scrollLeft = startScroll - dx;
+    });
+    const end = () => { isDown = false; };
+    el.addEventListener('pointerup', end);
+    el.addEventListener('pointerleave', end);
+    // 드래그한 경우 직후의 칩 클릭(필터 선택)은 무시
+    el.addEventListener('click', e => {
+      if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; }
+    }, true);
+  }
+  enableDragScroll($filters);
+  enableDragScroll($tabs);
 
   // ===== 초기 렌더 =====
   setSeries('doit');
