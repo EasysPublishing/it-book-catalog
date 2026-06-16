@@ -105,6 +105,8 @@ header p { font-size: 13px; opacity: .8; margin-top: 4px; }
               font-size: 14px; font-weight: 600; cursor: pointer; margin-bottom: 10px;
               text-decoration: none; color: var(--color-text); transition: all .15s; }
 .store-btn:hover { border-color: currentColor; }
+.store-btn.preview { color: #fff; border-color: #4f46e5; background: #4f46e5; margin-top: 4px; }
+.store-btn.preview:hover { background: #4338ca; border-color: #4338ca; }
 .store-btn.aladin { color: var(--color-aladin); } .store-btn.aladin:hover { background: #e8f4fd; }
 .store-btn.yes24  { color: var(--color-yes24); } .store-btn.yes24:hover  { background: #fdf0ef; }
 .store-btn.kyobo  { color: var(--color-kyobo); } .store-btn.kyobo:hover  { background: #eafaf1; }

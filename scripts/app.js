@@ -170,6 +170,9 @@
     const $desc = document.getElementById('modal-desc');
     if (book.description) { $desc.textContent = book.description; $desc.style.display = ''; }
     else { $desc.textContent = ''; $desc.style.display = 'none'; }
+    const $preview = document.getElementById('btn-preview');
+    if (book.previewUrl) { $preview.href = book.previewUrl; $preview.style.display = ''; }
+    else { $preview.removeAttribute('href'); $preview.style.display = 'none'; }
     const setBtn = (id, url) => {
       const btn = document.getElementById(id);
       if (url) { btn.href = url; btn.classList.remove('disabled'); btn.style.pointerEvents = ''; }
