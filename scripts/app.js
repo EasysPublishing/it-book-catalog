@@ -1,7 +1,8 @@
 (async () => {
-  const [books, catalog] = await Promise.all([
+  const [books, catalog, events] = await Promise.all([
     fetch('data/books.json').then(r => r.json()),
-    fetch('data/catalog.json').then(r => r.json())
+    fetch('data/catalog.json').then(r => r.json()),
+    fetch('data/events.json').then(r => r.json()).catch(() => [])
   ]);
 
   const state = {
@@ -19,6 +20,11 @@
 
   // 검색 정규화: 소문자 + 공백 제거 ("유니티 6" === "유니티6")
   const normalize = s => s.toLowerCase().replace(/\s+/g, '');
+
+  // 오늘 날짜(로컬) 기준 이벤트 종료 여부 — endDate 당일부터 종료
+  const _now = new Date();
+  const todayStr = `${_now.getFullYear()}-${String(_now.getMonth() + 1).padStart(2, '0')}-${String(_now.getDate()).padStart(2, '0')}`;
+  const isEnded = e => !!(e.endDate && todayStr >= e.endDate);
 
   // ===== 카드 생성 =====
   function createCard(bookId) {
@@ -113,6 +119,63 @@
     cats.forEach(cat => $content.appendChild(createCategorySection(cat)));
   }
 
+  // ===== 이벤트 카드 / 컨텐츠 =====
+  function createEventCard(evt) {
+    const ended = isEnded(evt);
+    const card = document.createElement('a');
+    card.className = 'event-card' + (ended ? ' ended' : '');
+    card.href = evt.link || '#';
+    card.target = '_blank';
+    card.rel = 'noopener';
+    const poster = document.createElement('div');
+    poster.className = 'event-card-poster';
+    if (evt.cover) {
+      poster.classList.add('has-cover');
+      const img = document.createElement('img');
+      img.className = 'event-book-cover';
+      img.src = evt.cover;
+      img.alt = evt.title;
+      poster.appendChild(img);
+    }
+    const body = document.createElement('div');
+    body.className = 'event-card-body';
+    const title = document.createElement('div');
+    title.className = 'event-card-title';
+    title.textContent = evt.title;
+    const period = document.createElement('div');
+    period.className = 'event-card-period';
+    period.textContent = ended ? '종료된 이벤트' : (evt.period || '').replace(/^📅\s*/, '');
+    body.append(title, period);
+    card.append(poster, body);
+    return card;
+  }
+
+  function renderEventContent() {
+    $content.innerHTML = '';
+    const section = document.createElement('div');
+    section.className = 'section';
+    const header = document.createElement('div');
+    header.className = 'section-header';
+    const h2 = document.createElement('h2');
+    h2.textContent = '🎉 진행 중인 이벤트';
+    const count = document.createElement('span');
+    count.className = 'section-count';
+    count.textContent = `${events.length}건`;
+    header.append(h2, count);
+    const grid = document.createElement('div');
+    grid.className = 'card-grid event-grid';
+    if (events.length) {
+      events.forEach(e => grid.appendChild(createEventCard(e)));
+    } else {
+      const empty = document.createElement('p');
+      empty.className = 'event-empty';
+      empty.textContent = '진행 중인 이벤트가 없습니다.';
+      grid.appendChild(empty);
+    }
+    section.append(header, grid);
+    $content.appendChild(section);
+  }
+
   // ===== 시리즈 탭 =====
   function setSeries(series) {
     state.series = series;
@@ -121,6 +184,15 @@
     [...$tabs.querySelectorAll('.series-btn')].forEach(btn => {
       btn.classList.toggle('active', btn.dataset.series === series);
     });
+    const $searchWrap = document.querySelector('.search-wrap');
+    if (series === 'event') {
+      $filters.style.display = 'none';
+      if ($searchWrap) $searchWrap.style.display = 'none';
+      renderEventContent();
+      $noResult.style.display = 'none';
+      return;
+    }
+    if ($searchWrap) $searchWrap.style.display = '';
     renderFilters();
     renderContent();
     applySearchAndFilter();
@@ -186,7 +258,18 @@
   function closeModal() { $overlay.classList.remove('open'); }
   $overlay.addEventListener('click', e => { if (e.target === $overlay) closeModal(); });
   document.getElementById('modal-close').addEventListener('click', closeModal);
+
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ===== 이벤트 배너 (featured 이벤트 → 이벤트 페이지로 바로 이동) =====
+  const $banner = document.getElementById('event-banner');
+  const featured = events.find(e => e.featured) || events[0];
+  if (featured && !isEnded(featured)) {
+    document.getElementById('eb-title').textContent = featured.title;
+    document.getElementById('eb-sub').textContent = featured.bannerSub || featured.period || '';
+    $banner.hidden = false;
+    if (featured.link) $banner.addEventListener('click', () => window.open(featured.link, '_blank', 'noopener'));
+  }
 
   // ===== 이벤트 바인딩 =====
   $tabs.addEventListener('click', e => {
