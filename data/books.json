@@ -1140,5 +1140,26 @@
       "kyobo": "https://product.kyobobook.co.kr/detail/S000217199978"
     },
     "previewUrl": "https://drive.google.com/file/d/1shsB0JZi_A21-FfXwNM-vUcImMVdbale/view"
+  },
+  "Doit!스케치업with엔스케이프": {
+    "title": "Do it! 스케치업 with 엔스케이프",
+    "description": "엔스케이프를 활용하면 스케치업 모델링을 쉽고 빠르게 렌더링할 수 있습니다. 책에서 다루는 8가지 실무 예제를 따라 해보며 엔스케이프 렌더링을 학습하고 다양한 설정값을 적용해 자신만의 렌더링 이미지를 만들어 볼 수 있습니다.",
+    "cover": "https://image.aladin.co.kr/product/34054/50/cover200/k062931372_2.jpg",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=340545043",
+      "yes24": "https://www.yes24.com/Product/Goods/126871758",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000213458257"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1_m8QiowFSA48vZtTwOWbi-OjEStCDyyL/view"
+  },
+  "Doit!건축BIM을위한Revit입문": {
+    "title": "Do it! 건축 BIM을 위한 Revit 입문",
+    "description": "건축 BIM에 Revit을 적용할 때 알아야 하는 10가지 주제를 다룹니다. 그리드부터 '빌라 사보아' 만들기까지 체계적으로 배웁니다.",
+    "cover": "https://image.aladin.co.kr/product/24019/91/cover200/k972639417_1.jpg",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=240199179",
+      "yes24": "https://www.yes24.com/Product/Goods/90227307",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000001817968"
+    }
   }
 }
