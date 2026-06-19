@@ -153,6 +153,29 @@ header p { font-size: 13px; opacity: .8; margin-top: 4px; }
 .event-card.ended .event-card-poster { filter: grayscale(1) brightness(.96); }
 .event-card.ended .event-card-period { color: #999; font-weight: 700; }
 
+/* ===== 교강사 카톡방 팝업 ===== */
+#popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5);
+                 z-index: 200; align-items: center; justify-content: center; padding: 20px; }
+#popup-overlay.open { display: flex; }
+#popup-box { position: relative; background: var(--color-surface); border-radius: 18px;
+             padding: 34px 30px 22px; width: 100%; max-width: 360px; text-align: center;
+             box-shadow: 0 12px 48px rgba(0,0,0,.28); }
+.popup-x { position: absolute; top: 12px; right: 14px; border: none; background: none;
+           font-size: 24px; line-height: 1; color: #bbb; cursor: pointer; padding: 4px; }
+.popup-x:hover { color: #666; }
+.popup-emoji { font-size: 44px; margin-bottom: 8px; }
+#popup-box h3 { font-size: 18px; font-weight: 800; line-height: 1.4; margin-bottom: 12px; }
+#popup-text { font-size: 14px; line-height: 1.65; color: var(--color-text-muted);
+              margin-bottom: 22px; white-space: pre-line; }
+.popup-join { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+              padding: 14px 16px; border-radius: 12px; background: #fee500; color: #191600;
+              font-size: 15px; font-weight: 800; text-decoration: none; transition: filter .15s; }
+.popup-join::before { content: "💬"; font-size: 16px; }
+.popup-join:hover { filter: brightness(.96); }
+.popup-dismiss { width: 100%; margin-top: 12px; padding: 8px; border: none; background: none;
+                 font-size: 12.5px; color: #999; cursor: pointer; }
+.popup-dismiss:hover { color: #666; text-decoration: underline; }
+
 /* ===== 반응형 ===== */
 @media (max-width: 768px) {
   /* 좌우 여백 축소 (--gutter가 따라감) */

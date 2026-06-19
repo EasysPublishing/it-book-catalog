@@ -1,8 +1,9 @@
 (async () => {
-  const [books, catalog, events] = await Promise.all([
+  const [books, catalog, events, popup] = await Promise.all([
     fetch('data/books.json').then(r => r.json()),
     fetch('data/catalog.json').then(r => r.json()),
-    fetch('data/events.json').then(r => r.json()).catch(() => [])
+    fetch('data/events.json').then(r => r.json()).catch(() => []),
+    fetch('data/popup.json').then(r => r.json()).catch(() => null)
   ]);
 
   const state = {
@@ -269,6 +270,27 @@
     document.getElementById('eb-sub').textContent = featured.bannerSub || featured.period || '';
     $banner.hidden = false;
     if (featured.link) $banner.addEventListener('click', () => window.open(featured.link, '_blank', 'noopener'));
+  }
+
+  // ===== 교강사 카톡방 팝업 (오늘 하루 보지 않기 = 그날 숨김) =====
+  const POPUP_KEY = 'easyspub_popup_hide';
+  if (popup && popup.enabled && popup.link && popup.link.indexOf('REPLACE_ME') === -1
+      && localStorage.getItem(POPUP_KEY) !== todayStr) {
+    const $po = document.getElementById('popup-overlay');
+    document.getElementById('popup-emoji').textContent = popup.emoji || '💬';
+    document.getElementById('popup-title').textContent = popup.title || '';
+    document.getElementById('popup-text').textContent = popup.text || '';
+    const $pl = document.getElementById('popup-link');
+    $pl.href = popup.link;
+    $pl.textContent = popup.buttonText || '입장하기';
+    const closePopup = () => $po.classList.remove('open');
+    document.getElementById('popup-x').addEventListener('click', closePopup);
+    document.getElementById('popup-dismiss').addEventListener('click', () => {
+      localStorage.setItem(POPUP_KEY, todayStr);
+      closePopup();
+    });
+    $po.addEventListener('click', e => { if (e.target === $po) closePopup(); });
+    $po.classList.add('open');
   }
 
   // ===== 이벤트 바인딩 =====
