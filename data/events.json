@@ -8,5 +8,15 @@
     "link": "https://www.instagram.com/p/DZq5z0JEyrP/?img_index=1",
     "endDate": "2026-07-01",
     "featured": true
+  },
+  {
+    "id": "frontend-interview-review",
+    "title": "『프런트엔드 면접의 기술』 서평단 모집",
+    "period": "서평단 모집 6/22~7/1 · 20명",
+    "cover": "https://image.yes24.com/goods/191211795/XL",
+    "link": "https://forms.gle/oWJaAjyUfVY5mFne9",
+    "endDate": "2026-07-02",
+    "endedLabel": "완료된 이벤트",
+    "featured": false
   }
 ]

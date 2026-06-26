@@ -145,7 +145,7 @@
     title.textContent = evt.title;
     const period = document.createElement('div');
     period.className = 'event-card-period';
-    period.textContent = ended ? '종료된 이벤트' : (evt.period || '').replace(/^📅\s*/, '');
+    period.textContent = ended ? (evt.endedLabel || '종료된 이벤트') : (evt.period || '').replace(/^📅\s*/, '');
     body.append(title, period);
     card.append(poster, body);
     return card;
