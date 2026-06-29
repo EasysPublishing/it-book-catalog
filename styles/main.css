@@ -115,19 +115,27 @@ header p { font-size: 13px; opacity: .8; margin-top: 4px; }
                 border-radius: 8px; font-size: 13px; cursor: pointer; margin-top: 4px; }
 .modal-close:hover { background: var(--color-border-light); }
 
-/* ===== 이벤트 배너 ===== */
-#event-banner { display: flex; align-items: center; gap: 14px; width: 100%;
-                padding: 14px var(--gutter); border: none; cursor: pointer; text-align: left;
-                color: #fff; background: linear-gradient(100deg, #1c1c2e 0%, #2a3a6e 55%, #3858a8 100%);
-                background-size: 200% 100%; transition: background-position .3s; }
-#event-banner:hover { background-position: 100% 0; }
+/* ===== 이벤트 배너 (롤링 캐러셀) ===== */
+#event-banner { position: relative; width: 100%; color: #fff;
+                background: linear-gradient(100deg, #1c1c2e 0%, #2a3a6e 55%, #3858a8 100%); }
+.eb-viewport { overflow: hidden; }
+.eb-track { display: flex; transition: transform .5s ease; }
+.eb-slide { flex: 0 0 100%; display: flex; align-items: center; gap: 14px;
+            padding: 14px var(--gutter); text-decoration: none; color: #fff; cursor: pointer; }
 .eb-emoji { font-size: 24px; flex-shrink: 0; }
-.eb-text { display: flex; flex-direction: column; gap: 2px; line-height: 1.35; }
+.eb-text { display: flex; flex-direction: column; gap: 2px; line-height: 1.35; min-width: 0; }
 .eb-text strong { font-size: 15px; font-weight: 800; }
 .eb-text span { font-size: 12px; opacity: .82; }
 .eb-cta { margin-left: auto; flex-shrink: 0; font-size: 12px; font-weight: 700;
-          background: rgba(255,255,255,.16); padding: 7px 14px; border-radius: 20px; white-space: nowrap; }
-#event-banner:hover .eb-cta { background: rgba(255,255,255,.28); }
+          background: rgba(255,255,255,.16); padding: 7px 14px; border-radius: 20px;
+          white-space: nowrap; transition: background .2s; }
+.eb-slide:hover .eb-cta { background: rgba(255,255,255,.28); }
+.eb-dots { position: absolute; bottom: 7px; left: 50%; transform: translateX(-50%);
+           display: flex; gap: 6px; }
+.eb-dots:empty { display: none; }
+.eb-dot { width: 7px; height: 7px; padding: 0; border: none; border-radius: 50%;
+          background: rgba(255,255,255,.4); cursor: pointer; transition: background .2s; }
+.eb-dot.active { background: #fff; }
 
 /* 이벤트 탭 버튼 강조 */
 .series-btn-event.active { color: #ffd27a; }

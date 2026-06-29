@@ -13,7 +13,7 @@
 <meta name="twitter:image" content="https://it-book-catalog.easyspub.co.kr/og-image.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="styles/main.css?v=20260619j">
+<link rel="stylesheet" href="styles/main.css?v=20260619l">
 </head>
 <body>
 <header>
@@ -22,13 +22,12 @@
 </header>
 
 <!-- 이벤트 배너 -->
-<button type="button" id="event-banner" hidden>
-  <span class="eb-text">
-    <strong id="eb-title"></strong>
-    <span id="eb-sub"></span>
-  </span>
-  <span class="eb-cta">자세히 보기 →</span>
-</button>
+<div id="event-banner" hidden>
+  <div class="eb-viewport">
+    <div class="eb-track" id="eb-track"></div>
+  </div>
+  <div class="eb-dots" id="eb-dots"></div>
+</div>
 
 <!-- 시리즈 탭 -->
 <div class="series-tabs" id="series-tabs">
@@ -78,6 +77,6 @@
   </div>
 </div>
 
-<script src="scripts/app.js?v=20260619k"></script>
+<script src="scripts/app.js?v=20260619n"></script>
 </body>
 </html>

@@ -262,14 +262,57 @@
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  // ===== 이벤트 배너 (featured 이벤트 → 이벤트 페이지로 바로 이동) =====
+  // ===== 이벤트 배너 (진행 중 이벤트 롤링 캐러셀) =====
   const $banner = document.getElementById('event-banner');
-  const featured = events.find(e => e.featured) || events[0];
-  if (featured && !isEnded(featured)) {
-    document.getElementById('eb-title').textContent = featured.title;
-    document.getElementById('eb-sub').textContent = featured.bannerSub || featured.period || '';
+  const bannerEvents = events.filter(e => !isEnded(e) && e.link);
+  if (bannerEvents.length) {
+    const $track = document.getElementById('eb-track');
+    const $dots = document.getElementById('eb-dots');
+
+    function goSlide(n, manual) {
+      idx = (n + bannerEvents.length) % bannerEvents.length;
+      $track.style.transform = `translateX(-${idx * 100}%)`;
+      [...$dots.children].forEach((d, i) => d.classList.toggle('active', i === idx));
+      if (manual) restart();
+    }
+
+    bannerEvents.forEach((e, i) => {
+      const slide = document.createElement('a');
+      slide.className = 'eb-slide';
+      slide.href = e.link;
+      slide.target = '_blank';
+      slide.rel = 'noopener';
+      const text = document.createElement('span');
+      text.className = 'eb-text';
+      const strong = document.createElement('strong');
+      strong.textContent = e.title;
+      const sub = document.createElement('span');
+      sub.textContent = e.bannerSub || e.period || '';
+      text.append(strong, sub);
+      const cta = document.createElement('span');
+      cta.className = 'eb-cta';
+      cta.textContent = '자세히 보기 →';
+      slide.append(text, cta);
+      $track.appendChild(slide);
+      if (bannerEvents.length > 1) {
+        const dot = document.createElement('button');
+        dot.className = 'eb-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `이벤트 ${i + 1}`);
+        dot.addEventListener('click', () => goSlide(i, true));
+        $dots.appendChild(dot);
+      }
+    });
     $banner.hidden = false;
-    if (featured.link) $banner.addEventListener('click', () => window.open(featured.link, '_blank', 'noopener'));
+
+    let idx = 0, timer = null;
+    function start() {
+      clearInterval(timer);
+      if (bannerEvents.length > 1) timer = setInterval(() => goSlide(idx + 1), 3000);
+    }
+    function restart() { start(); }
+    start();
+    $banner.addEventListener('mouseenter', () => clearInterval(timer));
+    $banner.addEventListener('mouseleave', start);
   }
 
   // ===== 교강사 카톡방 팝업 (오늘 하루 보지 않기 = 그날 숨김) =====
