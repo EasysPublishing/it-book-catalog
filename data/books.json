@@ -1161,5 +1161,49 @@
       "yes24": "https://www.yes24.com/Product/Goods/90227307",
       "kyobo": "https://product.kyobobook.co.kr/detail/S000001817968"
     }
+  },
+  "Doit!스프링AI를활용한AI에이전트개발입문": {
+    "title": "Do it! 스프링 AI를 활용한 AI 에이전트 개발 입문",
+    "description": "자바 개발자에게 가장 익숙한 스프링 환경에서 챗봇, RAG, MCP, 멀티에이전트 시스템까지 구현하며 AI 서비스 개발을 배울 수 있도록 구성한 실전 입문서입니다. 실무에 바로 적용할 수 있는 스프링 AI 핵심 기능을 단계별로 익히는 데 집중하며, AI 개발이 처음이라도 빠르게 AI 에이전트를 구현할 수 있습니다.",
+    "cover": "https://image.aladin.co.kr/product/39539/7/cover200/k802139744_1.jpg",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=395390738",
+      "yes24": "https://www.yes24.com/Product/Goods/191580688",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000220216809"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1kJyUnEBJkEFn7kAZ7vk7bN3hf1dch92T/view"
+  },
+  "Doit!알고리즘코딩테스트-자바편": {
+    "title": "Do it! 알고리즘 코딩 테스트 - 자바 편",
+    "description": "코딩 테스트 강의 전문가의 합격 노하우와 역대 기출 문제를 엄선하여 담은 자바 코딩 테스트 대비 도서입니다. 최신 출제 경향을 반영한 핵심 100제로 IT 기업 취업을 위한 필독서입니다.",
+    "cover": "https://image.aladin.co.kr/product/36671/4/cover200/k852030380_1.jpg",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=366710465",
+      "yes24": "https://www.yes24.com/Product/Goods/148122935",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000216912322"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1zrtuZ7S_tJ-_3cZznLP_zLoalwjjhlkf/view"
+  },
+  "Doit!알고리즘코딩테스트-C++편": {
+    "title": "Do it! 알고리즘 코딩 테스트 - C++ 편",
+    "description": "네이버, 카카오, 삼성 등 주요 IT 기업의 역대 기출 유형을 분석한 35가지 자료구조와 알고리즘 이론부터 ‘백준 온라인 저지’에서 엄선한 핵심 문제까지, C++로 코딩 테스트를 대비하는 데 필요한 모든 것을 한 권에 정리했습니다. 최신 출제 경향을 반영해 알고리즘 유형과 문제를 보강하고, 합격률을 높이는 비법 노트까지 담았습니다.",
+    "cover": "https://image.aladin.co.kr/product/36898/42/cover200/k462030916_2.jpg",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=368984250",
+      "yes24": "https://www.yes24.com/Product/Goods/150240159",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000217191101"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1klJcJFhbpRZt4wOVKuGtjyQXG9YYKWvP/view"
+  },
+  "Doit!알고리즘코딩테스트-파이썬편": {
+    "title": "Do it! 알고리즘 코딩 테스트 - 파이썬 편",
+    "description": "네이버, 카카오, 삼성 등 주요 IT 기업의 역대 기출 유형을 분석한 35가지 자료구조와 알고리즘 이론부터 ‘백준 온라인 저지’에서 엄선한 핵심 문제까지, 파이썬으로 코딩 테스트를 대비하는 데 필요한 모든 것을 한 권에 정리했습니다. 최신 출제 경향을 반영해 알고리즘 유형과 문제를 보강하고, 합격률을 높이는 비법 노트까지 담았습니다.",
+    "cover": "https://image.aladin.co.kr/product/37021/30/cover200/s502137654_1.jpg",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=370213063",
+      "yes24": "https://www.yes24.com/Product/Goods/151761784",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000217333575"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1CQLsnzKNgR_z-hzPMspNJ5bzuv7ghwB8/view"
   }
 }
