@@ -1205,5 +1205,27 @@
       "kyobo": "https://product.kyobobook.co.kr/detail/S000217333575"
     },
     "previewUrl": "https://drive.google.com/file/d/1CQLsnzKNgR_z-hzPMspNJ5bzuv7ghwB8/view"
+  },
+  "된다!교사를위한에듀테크바이브코딩수업활용법": {
+    "title": "된다! 교사를 위한 에듀테크 바이브 코딩 수업 활용법",
+    "description": "제미나이와 캔바 등 AI·에듀테크 도구로 우리 반 전용 프로그램과 웹 앱 20가지를 직접 만드는 방법을 담았습니다. 코딩을 몰라도 바이브 코딩으로 수업에 바로 활용할 수 있는 교사용 실전 활용서입니다.",
+    "cover": "https://image.aladin.co.kr/product/39942/59/cover200/k492130328_1.jpg",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399425968",
+      "yes24": "https://www.yes24.com/Product/Goods/194513646",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000220694962"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1qpE9MJthpYPy_SLkYFVWvI-dgEZ0r4OU/view"
+  },
+  "Doit!AI시대에살아남는프런트엔드면접의기술": {
+    "title": "Do it! AI 시대에 살아남는 프런트엔드 면접의 기술",
+    "description": "HTML, CSS, 자바스크립트 같은 웹 기초부터 리액트와 넥스트.js, 인프라·보안·네트워크, 최신 AI 프로젝트까지 프런트엔드 개발의 핵심을 한 권에서 모두 다룬다. 특히 AI 시대의 개발 환경 변화를 적극 반영하여 AI에 기반한 서비스 개발 과정에서 겪을 수 있는 실무 질문도 함께 수록했다. LLM 스트리밍 응답 처리, RAG 구조, AI 환각 대응 전략, SSE와 웹소켓 비교, ReadableStream 활용 방식 등 AI 기반 서비스를 개발할 때 필요한 최신 프런트엔드 기술도 함께 설명한다.",
+    "cover": "https://image.aladin.co.kr/product/39701/85/cover200/k372130491_1.jpg",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=397018520",
+      "yes24": "https://www.yes24.com/Product/Goods/191211795",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000220363856"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1Z52zCSpHDwDI9aipnDaUgjh8jWR5JehJ/view"
   }
 }
