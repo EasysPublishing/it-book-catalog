@@ -18,5 +18,25 @@
     "endDate": "2026-07-02",
     "endedLabel": "완료된 이벤트",
     "featured": false
+  },
+  {
+    "id": "spring-ai-zoom",
+    "title": "『Do it! 스프링 AI를 활용한 AI 에이전트 개발 입문』 저자 줌 강연",
+    "period": "7/16(목) 저녁 7:30 · 온라인 무료",
+    "cover": "https://image.aladin.co.kr/product/39539/7/cover200/k802139744_1.jpg",
+    "link": "https://forms.gle/SurdKL72bNhWKQN28",
+    "endDate": "2026-07-17",
+    "endedLabel": "종료된 강연",
+    "featured": false
+  },
+  {
+    "id": "gemini-zoom",
+    "title": "『된다! 하루 만에 끝내는 제미나이 활용법』 저자 줌 특강",
+    "period": "9/3(목) 저녁 8시 · 온라인 무료",
+    "cover": "https://image.aladin.co.kr/product/39831/34/cover200/k412130819_1.jpg",
+    "link": "https://forms.gle/wfZqSXdZNZU8DYcS7",
+    "endDate": "2026-09-04",
+    "endedLabel": "종료된 강연",
+    "featured": false
   }
 ]

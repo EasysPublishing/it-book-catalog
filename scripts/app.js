@@ -151,30 +151,40 @@
     return card;
   }
 
-  function renderEventContent() {
-    $content.innerHTML = '';
+  function eventSection(title, list, emptyMsg) {
     const section = document.createElement('div');
     section.className = 'section';
     const header = document.createElement('div');
     header.className = 'section-header';
     const h2 = document.createElement('h2');
-    h2.textContent = '🎉 진행 중인 이벤트';
+    h2.textContent = title;
     const count = document.createElement('span');
     count.className = 'section-count';
-    count.textContent = `${events.length}건`;
+    count.textContent = `${list.length}건`;
     header.append(h2, count);
     const grid = document.createElement('div');
     grid.className = 'card-grid event-grid';
-    if (events.length) {
-      events.forEach(e => grid.appendChild(createEventCard(e)));
+    if (list.length) {
+      list.forEach(e => grid.appendChild(createEventCard(e)));
     } else {
       const empty = document.createElement('p');
       empty.className = 'event-empty';
-      empty.textContent = '진행 중인 이벤트가 없습니다.';
+      empty.textContent = emptyMsg;
       grid.appendChild(empty);
     }
     section.append(header, grid);
-    $content.appendChild(section);
+    return section;
+  }
+
+  function renderEventContent() {
+    $content.innerHTML = '';
+    const active = events.filter(e => !isEnded(e));
+    const ended = events.filter(e => isEnded(e));
+    // 진행 중: 항상 표시(없으면 안내). 종료됨: 있을 때만 표시.
+    $content.appendChild(eventSection('진행 중인 이벤트', active, '진행 중인 이벤트가 없습니다.'));
+    if (ended.length) {
+      $content.appendChild(eventSection('종료된 이벤트', ended, ''));
+    }
   }
 
   // ===== 시리즈 탭 =====
