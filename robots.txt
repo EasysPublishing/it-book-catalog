@@ -1,0 +1,27 @@
+# 이지스도서 목록 — 모든 검색/AI 크롤러 허용
+User-agent: *
+Allow: /
+
+# 검색엔진 및 AI 답변 엔진 크롤러 명시 허용
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://it-book-catalog.easyspub.co.kr/sitemap.xml
