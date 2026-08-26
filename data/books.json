@@ -1348,5 +1348,17 @@
       "kyobo": "https://product.kyobobook.co.kr/detail/S000220623682"
     },
     "previewUrl": "https://drive.google.com/file/d/1JP2U6Xyvy0w25U8NcWlu7jDeJO-jk6BV/view"
+  },
+  "Doit!쉽게배우는머신러닝+딥러닝": {
+    "title": "Do it! 쉽게 배우는 머신러닝 + 딥러닝",
+    "description": "코랩과 파이썬 기초부터 머신러닝, 딥러닝, 트랜스포머, 강화학습까지 AI의 핵심 기술과 모델을 직접 구현하며 배우는 실습 중심의 입문서입니다.",
+    "cover": "https://image.aladin.co.kr/product/40013/68/cover200/k692130131_1.jpg",
+    "date": "2026-08-20",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=400136891",
+      "yes24": "https://www.yes24.com/Product/Goods/195027158",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000220806717"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1D47M3ioCJj8fYP8BZRjkEGU9zs-1Icq2/view"
   }
 }
