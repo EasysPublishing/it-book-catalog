@@ -38,5 +38,25 @@
     "endDate": "2026-09-04",
     "endedLabel": "종료된 강연",
     "featured": false
+  },
+  {
+    "id": "gemini-mock-exam",
+    "title": "『된다! 하루 만에 끝내는 제미나이 활용법』 모의고사 이벤트",
+    "period": "~9/10 · 참여 시 프롬프트 가이드 PDF 증정",
+    "cover": "https://image.aladin.co.kr/product/39831/34/cover200/k412130819_1.jpg",
+    "link": "https://www.instagram.com/p/Dc0fkbSlebX/?img_index=1",
+    "endDate": "2026-09-11",
+    "endedLabel": "종료된 이벤트",
+    "featured": false
+  },
+  {
+    "id": "excel-7days-review",
+    "title": "『된다! 7일 실무 엑셀』(전면 개정판) 서평단 모집",
+    "period": "서평단 모집 8/28~9/6 · 20명",
+    "cover": "https://image.aladin.co.kr/product/39999/82/cover200/k652130033_2.jpg",
+    "link": "https://forms.gle/1TYZnveiy75dGu5q7",
+    "endDate": "2026-09-07",
+    "endedLabel": "완료된 이벤트",
+    "featured": false
   }
 ]
