@@ -305,13 +305,13 @@
   },
   "된다!7일실무엑셀": {
     "title": "된다! 7일 실무 엑셀",
-    "date": "2019-07-25",
-    "description": "실무에 쓰는 엑셀의 모든 기능을 소개합니다. \n수식, 함수, 차트, 피벗 테이블까지 다루며 모든 실습에는 동영상 강의를 제공합니다.",
-    "cover": "https://image.aladin.co.kr/product/19840/51/cover200/k772635334_1.jpg",
+    "date": "2026-09-15",
+    "description": "엑셀의 ‘ㅇ’ 자도 모르는 왕초보부터 자격증은 있지만 실무가 두려운 취준생과 신입사원까지, AI 시대에도 엑셀이 어려운, 모두를 위한 친절한 엑셀 입문서",
+    "cover": "https://image.yes24.com/goods/194919963/L",
     "links": {
-      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=198405108",
-      "yes24": "https://www.yes24.com/Product/Goods/76182394",
-      "kyobo": "https://product.kyobobook.co.kr/detail/S000001817934"
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=399998214",
+      "yes24": "https://www.yes24.com/product/goods/194919963",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000220789124"
     }
   },
   "된다!7일실무한글": {
@@ -1360,5 +1360,29 @@
       "kyobo": "https://product.kyobobook.co.kr/detail/S000220806717"
     },
     "previewUrl": "https://drive.google.com/file/d/1D47M3ioCJj8fYP8BZRjkEGU9zs-1Icq2/view"
+  },
+  "Doit!바이브코딩+클로드코드": {
+    "title": "Do it! 바이브 코딩 + 클로드 코드",
+    "date": "2026-09-20",
+    "description": "코딩이 처음이어도 개발 환경부터 기획·구현·관리·배포·자동화까지 차근차근 따라 하며 클로드 코드를 익히는 실습형 입문서입니다.",
+    "cover": "https://image.yes24.com/goods/196628574/L",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=402375028&start=pcsearch_auto",
+      "yes24": "https://www.yes24.com/product/goods/196628574",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000221337772"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1TPFBef-Nr8ntXZd2mjS4MoyowsX1BFt3/view"
+  },
+  "된다!하루만에만드는AI영상&음악": {
+    "title": "된다! 하루 만에 만드는 AI 영상 & 음악",
+    "date": "2026-09-29",
+    "description": "챗GPT, 구글 플로, 클링 AI, 수노, 힉스필드와 같은 AI로 영상을 순식간에 만들어 볼 수 있습니다. 초보자도 전문가의 영역에 도전해 볼 수 있는 프롬프트 97가지를 수록했습니다. 강의 중에 수강생들이 바로바로 따라 할 수 있도록 복붙할 수 있는 프롬프트를 모아 둔 링크도 제공합니다.",
+    "cover": "https://image.yes24.com/goods/196898651/L",
+    "links": {
+      "aladin": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=402851087",
+      "yes24": "https://www.yes24.com/product/goods/196898651",
+      "kyobo": "https://product.kyobobook.co.kr/detail/S000221432691"
+    },
+    "previewUrl": "https://drive.google.com/file/d/1fg_ia9LYJYxLaF6Z4J9_Lz3_8odWt5QV/view"
   }
 }
