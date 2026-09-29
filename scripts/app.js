@@ -27,6 +27,11 @@
   const todayStr = `${_now.getFullYear()}-${String(_now.getMonth() + 1).padStart(2, '0')}-${String(_now.getDate()).padStart(2, '0')}`;
   const isEnded = e => !!(e.endDate && todayStr >= e.endDate);
 
+  // 출간 3개월 이내(오늘 기준) 도서에 '최신간' 배지 표시
+  const _cut = new Date(_now.getFullYear(), _now.getMonth() - 3, _now.getDate());
+  const newSinceStr = `${_cut.getFullYear()}-${String(_cut.getMonth() + 1).padStart(2, '0')}-${String(_cut.getDate()).padStart(2, '0')}`;
+  const isNewBook = b => !!(b.date && b.date >= newSinceStr);
+
   // ===== 카드 생성 =====
   function createCard(bookId) {
     const book = books[bookId];
@@ -46,6 +51,12 @@
     title.textContent = book.title;
 
     card.append(img, title);
+    if (isNewBook(book)) {
+      const badge = document.createElement('span');
+      badge.className = 'badge-new';
+      badge.textContent = '최신간';
+      card.append(badge);
+    }
     card.addEventListener('click', () => openModal(book));
     return card;
   }
