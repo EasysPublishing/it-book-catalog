@@ -145,7 +145,7 @@ header p { font-size: 13px; opacity: .8; margin-top: 4px; }
 .series-btn-event.active { color: #ffd27a; }
 
 /* 이벤트 카드 */
-.event-grid { gap: 18px; }
+.event-grid { display: flex; flex-wrap: wrap; gap: 18px; }
 .event-empty { color: #aaa; font-size: 14px; padding: 20px 4px; }
 .event-card { display: flex; flex-direction: column; width: 260px; flex-shrink: 0;
               background: var(--color-surface); border-radius: var(--radius-card); overflow: hidden;
