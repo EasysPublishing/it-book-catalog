@@ -58,5 +58,13 @@
     "endDate": "2026-09-07",
     "endedLabel": "완료된 이벤트",
     "featured": false
+  },
+  {
+    "id": "claude-code-it-brand-fair",
+    "title": "『Do it! 바이브 코딩 + 클로드 코드』 출간 기념 이지스퍼블리싱 IT브랜드전",
+    "period": "이벤트 대상 도서 구매 시 ‘데스크 오거나이저’ 증정 (포인트 차감, 한정수량)",
+    "cover": "https://image.yes24.com/goods/196628574/L",
+    "link": "https://event.yes24.com/template?EventNo=276844",
+    "endedLabel": "종료된 이벤트"
   }
 ]
